@@ -102,13 +102,36 @@ public class Main {
         sumOfElementsArray(array);
     }
 
+    public static int randomDifferentNumbers(int arr[][]) {
 
+        int random = (int) (Math.random() * (11 - 1) + 1);
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++)
+                if (arr[i][j] == random) {
+                    return randomDifferentNumbers(arr);
+                }
+        }
+        return random;
+    }
+
+    static void additionalTask1() {
+
+        int[][] array = new int[3][3];
+        for (int i = 0; i < array.length; i++, System.out.println()) {
+            for (int j = 0; j < array[i].length; j++) {
+                array[i][j] = randomDifferentNumbers(array);
+                System.out.print(array[i][j] + " ");
+            }
+        }
+
+    }
 
     public static void main(String[] args) {
         task1();
         task2();
         task3();
         task4();
-       
+       additionalTask1();
     }
 }
