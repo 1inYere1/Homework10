@@ -58,7 +58,7 @@ public class Main {
                 {129, -12, 45, 76, -78, 87, -90}
         };
 
-        int MaxSumOfElements = 0;
+        int maxSumOfElements = 0;
         int indexMaxSumOfElements = 0;
 
         for (int i = 0; i < array.length; i++) {
@@ -66,8 +66,8 @@ public class Main {
             for (int j = 0; j < array[i].length; ++j) {
                 sumOfElements += array[i][j];
             }
-            if (MaxSumOfElements < sumOfElements) {
-                MaxSumOfElements = sumOfElements;
+            if (maxSumOfElements < sumOfElements) {
+                maxSumOfElements = sumOfElements;
                 indexMaxSumOfElements = i;
 
             }
@@ -80,7 +80,7 @@ public class Main {
         System.out.println();
     }
 
-    static void sumOfElementsArray(int arr[][]) {
+    static void sumOfAllArrayElements(int arr[][]) {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
@@ -99,17 +99,17 @@ public class Main {
             }
         }
 
-        sumOfElementsArray(array);
+        sumOfAllArrayElements(array);
     }
 
-    public static int randomDifferentNumbers(int arr[][]) {
+    public static int generatorRandomDifferentNumbers(int arr[][]) {
 
         int random = (int) (Math.random() * (11 - 1) + 1);
 
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++)
                 if (arr[i][j] == random) {
-                    return randomDifferentNumbers(arr);
+                    return generatorRandomDifferentNumbers(arr);
                 }
         }
         return random;
@@ -120,7 +120,7 @@ public class Main {
         int[][] array = new int[3][3];
         for (int i = 0; i < array.length; i++, System.out.println()) {
             for (int j = 0; j < array[i].length; j++) {
-                array[i][j] = randomDifferentNumbers(array);
+                array[i][j] = generatorRandomDifferentNumbers(array);
                 System.out.print(array[i][j] + " ");
             }
         }
